@@ -10,10 +10,8 @@ html(lang='ru')
         link(rel='stylesheet' href='./build/css/app.css')
 
     body
-        section
-            p Я - вложенный параграф в секцию
-        section
-            h2 Лучшие товары в нашем магазине
-            div
-                h3 Товар 1
-                p Цена: 55 рублей
+        .container(data-container='news')
+            .row
+                .col
+                    p А вот и текст
+
