@@ -20,4 +20,4 @@ pug-version:
 	npx pug --version
 
 pug:
-	npx pug src/index.pug --pretty -o ./build
+	npx pug src/index.pug --pretty -w -o ./build
