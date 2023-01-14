@@ -2,22 +2,22 @@ install:
 	npm install
 
 lint:
-	npx stylelint ./src/styles/*.css
+	npx stylelint ./build/css/*.css
 	npx stylelint ./src/styles/**/*.scss
-	npx htmlhint ./src/*.html
+	npx htmlhint ./build/*.html
 
 fix-lint:
-	npx stylelint --fix ./src/styles/*.css
+	npx stylelint --fix ./build/css/*.css
 	npx stylelint --fix ./src/styles/**/*.scss
 
 deploy:
-	npx surge ./src/
+	npx surge ./build/
 
 compile:
-	sass --watch src/styles/app.scss src/styles/app.css
+	sass --watch src/styles/app.scss build/css/app.css
 
 pug-version:
 	npx pug --version
 
 pug:
-	npx pug src/index.pug --pretty
+	npx pug src/index.pug --pretty -o ./build
