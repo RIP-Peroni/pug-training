@@ -8,5 +8,8 @@ html(lang='ru')
 
         link(rel='stylesheet' href='./css/app.css')
     body
-        .buffer
-            p!= "<span>Hello</span>, Hexlet"
+        - let i = 1
+        ul
+            - while (i <= 9)
+                li #{i}
+                - i += 2
