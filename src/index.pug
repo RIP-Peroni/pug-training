@@ -8,5 +8,9 @@ html(lang='ru')
 
         link(rel='stylesheet' href='./css/app.css')
     body
-        main
-            include:markdown-it ./main.md
+        - const title = "Программы обучения на Хекслете"; // JS код
+
+        .container
+            .row
+                .col-12
+                    h1 #{title}
