@@ -8,9 +8,7 @@ html(lang='ru')
 
         link(rel='stylesheet' href='./css/app.css')
     body
-        - const one = 1;
-        - const two = 2;
-        - const action = "plus";
+        - const html = "<p>Текст параграфа</p>"
 
-        .calculation
-            | #{one} #{action} #{two} = #{one + two}
+        .result
+            | #{html}
