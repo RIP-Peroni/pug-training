@@ -8,9 +8,9 @@ html(lang='ru')
 
         link(rel='stylesheet' href='./css/app.css')
     body
-        - const title = "Программы обучения на Хекслете"; // JS код
+        - const one = 1;
+        - const two = 2;
+        - const action = "plus";
 
-        .container
-            .row
-                .col-12
-                    h1 #{title}
+        .calculation
+            | #{one} #{action} #{two} = #{one + two}
