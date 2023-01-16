@@ -1,14 +1,4 @@
-mixin article(name = 'Hexlet', author = 'Кодовёнок')
-    .post
-        h2= name
-
-        .post-body
-            if block
-                block
-            else
-                p Контента нет!
-
-        .post-author= author
+include mixin
 
 doctype html
 html(lang='ru')
@@ -16,7 +6,8 @@ html(lang='ru')
         meta(charset='UTF-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
-        title Hexlet Profile
+        title Hexlet Table
     body
-        +article('Название статьи', 'Автор статьи')
-            include:markdown-it article_content.md
+        +table(["№", "Профессия", "Описание", "Срок"],[["1", "Фронтенд-программист", "Разработка фронтенд-компонентов веб-приложений", "8 месяцев"],
+                ["2", "Python-программист", "Разработка веб-приложений на Django", "8 месяцев"],
+                ["3", "PHP-программист", "Разработка веб-приложений на Laravel", "8 месяцев"]])
