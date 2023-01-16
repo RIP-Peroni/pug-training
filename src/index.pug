@@ -26,9 +26,9 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Hexlet Profile
     body
-        section.container
-            each people, position in users
-                h2= position
-                ul
-                    each user in people
-                        li= user.name + ' ' + user.surname
+        - let count = 0;
+
+        ul
+            while count < 5
+                li= "Hello, my number is " + count
+                - count += 1
