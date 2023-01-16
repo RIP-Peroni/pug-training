@@ -6,14 +6,16 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Курсы на Хекслет
     body
-        - const isLogin = true;
+        -
+            const user = {
+                name: 'Кодовёнок',
+                surname: 'Хекслетович',
+                login: 'hexlet-code',
+            }
 
-        .container
-            .row
-                .col
-                    if isLogin
-                        section.profile
-                            h1 Добро пожаловать!
-                    else
-                        section.registration
-                            h1 Зарегистрируйтесь!
+        section.user-profile
+            p.name
+                if user.name && user.surname
+                    | #{user.name} #{user.surname}
+                else
+                    | #{user.login}
