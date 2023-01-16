@@ -1,18 +1,22 @@
 -
-    const users = [
-        {
-            name: 'Кодовёнок',
-            surname: 'Хекслетович',
-            login: 'hexlet-code',
-            scores: 1271,
-        },
-        {
-            name: 'Король',
-            surname: 'Вёрстки',
-            login: 'king-of-layout',
-            scores: 1100,
-        }
-    ];
+    const users = {
+      admin: [
+          {
+              name: 'Кодовёнок',
+              surname: 'Хекслетович',
+          },
+      ],
+      moderator: [
+          {
+              name: 'Король',
+              surname: 'Вёрстки',
+          },
+          {
+              name: 'Алексей',
+              surname: 'Примадонин',
+          },
+      ],
+    };
 
 doctype html
 html(lang='ru')
@@ -23,22 +27,8 @@ html(lang='ru')
         title Hexlet Profile
     body
         section.container
-            h2 Рейтинг пользователей
-
-            table
-                thead
-                    tr
-                        th Имя
-                        th Фамилия
-                        th Логин
-                        th Баллы
-                tbody
-                    each user in users
-                        tr
-                            td= user.name
-                            td= user.surname
-                            td= user.login
-                            td= user.scores
-                    else
-                        tr
-                            td(colspan='4') Нет пользователей
+            each people, position in users
+                h2= position
+                ul
+                    each user in people
+                        li= user.name + ' ' + user.surname
