@@ -1,5 +1,5 @@
-mixin buttonOrder
-    button.btn.btn-order Оформить заявку
+mixin button(title = "Заказать")
+    button.btn.btn-order= title
 
 doctype html
 html(lang='ru')
@@ -9,5 +9,7 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Hexlet Profile
     body
-        +buttonOrder
-        +buttonOrder
+        +button
+        +button('Оплатить')
+        +button
+
