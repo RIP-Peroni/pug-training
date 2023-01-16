@@ -1,19 +1,23 @@
 -
-    const users = {
-      admin: [
+    const icons = {
+      free: [
           {
-              name: 'Кодовёнок',
-              surname: 'Хекслетович',
+              name: 'robot',
+              url: './icons/robot.svg',
+          },
+          {
+              name: 'hexlet',
+              url: './icons/hexlet.svg'
           },
       ],
-      moderator: [
+      premium: [
           {
-              name: 'Король',
-              surname: 'Вёрстки',
+              name: 'cat',
+              url: './icons/premium/cat.svg',
           },
           {
-              name: 'Алексей',
-              surname: 'Примадонин',
+              name: 'dog',
+              url: './icons/premium/dog.svg',
           },
       ],
     };
@@ -26,9 +30,9 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Hexlet Profile
     body
-        - let count = 0;
-
-        ul
-            while count < 5
-                li= "Hello, my number is " + count
-                - count += 1
+        each items, access in icons
+            h2= access
+            ul
+                each item in items
+                    li
+                        a(href=item.url)= item.name
