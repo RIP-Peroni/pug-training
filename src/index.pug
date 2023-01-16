@@ -1,37 +1,11 @@
--
-    const users = [
-        {
-            name: 'Кодовёнок',
-            surname: 'Хекслетович',
-            login: 'hexlet-code',
-            score: 1271,
-        },
-        {
-            name: 'Король',
-            surname: 'Вёрстки',
-            login: 'king-of-layout',
-            score: 1100,
-        },
-    ];
+mixin article(name, author)
+    .post
+        h2= name
 
-mixin createUserTable(userData = [])
-    table
-        thead
-            tr
-                th Имя
-                th Фамилия
-                th Логин
-                th Баллы
-        tbody
-            each user in userData
-                tr
-                    td= user.name
-                    td= user.surname
-                    td= user.login
-                    td= user.score
-            else
-                tr
-                    td(colspan='4') Пользователи отсутствуют
+        .post-body
+            block
+
+        .post-author= author
 
 doctype html
 html(lang='ru')
@@ -41,10 +15,5 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Hexlet Profile
     body
-        section
-            h2 Лучшие из лучших
-            +createUserTable(users)
-
-            h2 Худшие из худших
-            +createUserTable(badUsers)
-
+        +article('Название статьи', 'Автор статьи')
+            include:markdown-it article_content.md
