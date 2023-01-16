@@ -1,23 +1,17 @@
 -
-    const icons = {
-      free: [
+    const contacts = {
+      'A': [
           {
-              name: 'robot',
-              url: './icons/robot.svg',
+              name: 'Александр',
+              surname: 'Хекслетович',
           },
           {
-              name: 'hexlet',
-              url: './icons/hexlet.svg'
-          },
-      ],
-      premium: [
-          {
-              name: 'cat',
-              url: './icons/premium/cat.svg',
+              name: 'Андрей',
+              surname: 'Верстальщиков',
           },
           {
-              name: 'dog',
-              url: './icons/premium/dog.svg',
+              name: 'Артём',
+              surname: 'Джаваскриптов',
           },
       ],
     };
@@ -30,9 +24,10 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Hexlet Profile
     body
-        each items, access in icons
-            h2= access
+        each people, letter in contacts
+            h2= letter
             ul
-                each item in items
-                    li
-                        a(href=item.url)= item.name
+                each person in people
+                    li #{person.name} #{person.surname}
+                else
+                    li Нет пользователей
