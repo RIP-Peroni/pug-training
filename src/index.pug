@@ -1,20 +1,5 @@
--
-    const contacts = {
-      'A': [
-          {
-              name: 'Александр',
-              surname: 'Хекслетович',
-          },
-          {
-              name: 'Андрей',
-              surname: 'Верстальщиков',
-          },
-          {
-              name: 'Артём',
-              surname: 'Джаваскриптов',
-          },
-      ],
-    };
+mixin buttonOrder
+    button.btn.btn-order Оформить заявку
 
 doctype html
 html(lang='ru')
@@ -24,10 +9,5 @@ html(lang='ru')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         title Hexlet Profile
     body
-        each people, letter in contacts
-            h2= letter
-            ul
-                each person in people
-                    li #{person.name} #{person.surname}
-                else
-                    li Нет пользователей
+        +buttonOrder
+        +buttonOrder
