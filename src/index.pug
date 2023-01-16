@@ -1,4 +1,12 @@
-- const isAdmin = false;
+-
+    const user = {
+        login: 'hexlet',
+        password: 'hexletpass',
+        name: 'Кодовёнок',
+        surname: 'Хекслетович',
+        role: 'admin',
+        testing: true,
+    };
 
 doctype html
 html(lang='ru')
@@ -6,9 +14,27 @@ html(lang='ru')
         meta(charset='UTF-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
-        title Домашняя страница
+        title Hexlet Profile
     body
-        unless isAdmin
-            h1 Недостаточно прав для просмтра страницы
-        else
-            h1 Добро пожаловать
+        section.profile-links
+            h1 #{user.name} #{user.surname}
+            nav
+                a(href="#") Настройки
+                .divider
+                a(href="#") Промокод
+                a(href="#") Доступ в подарок
+
+                if user.role !== 'user'
+                    .divider
+                    a(href="#") Учительская
+                    a(href="#") Менторство
+                    a(href="#") Маркетинг
+
+                .divider
+                a(href="#") Помощь
+                button Выйти
+
+            if user.role === 'admin' && user.testing
+                section
+                    h2 Сводка по тестированию
+                    include data/testing.pug
