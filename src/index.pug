@@ -1,9 +1,4 @@
--
-    const titles = {
-        home: "Домашняя страница",
-        product: "Наши продукты",
-    }
-- const url = "home";
+- const isAdmin = false;
 
 doctype html
 html(lang='ru')
@@ -11,11 +6,9 @@ html(lang='ru')
         meta(charset='UTF-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
-
-        if url === 'home'
-            title= titles.home
-        else if url === 'product'
-            title= titles.product
-        else
-            title А вот такой страницы нет :(
+        title Домашняя страница
     body
+        unless isAdmin
+            h1 Недостаточно прав для просмтра страницы
+        else
+            h1 Добро пожаловать
