@@ -1,9 +1,12 @@
-mixin article(name, author)
+mixin article(name = 'Hexlet', author = 'Кодовёнок')
     .post
         h2= name
 
         .post-body
-            block
+            if block
+                block
+            else
+                p Контента нет!
 
         .post-author= author
 
