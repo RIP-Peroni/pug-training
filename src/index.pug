@@ -1,21 +1,21 @@
+-
+    const titles = {
+        home: "Домашняя страница",
+        product: "Наши продукты",
+    }
+- const url = "home";
+
 doctype html
 html(lang='ru')
     head
         meta(charset='UTF-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
-        title Курсы на Хекслет
-    body
-        -
-            const user = {
-                name: 'Кодовёнок',
-                surname: 'Хекслетович',
-                login: 'hexlet-code',
-            }
 
-        section.user-profile
-            p.name
-                if user.name && user.surname
-                    | #{user.name} #{user.surname}
-                else
-                    | #{user.login}
+        if url === 'home'
+            title= titles.home
+        else if url === 'product'
+            title= titles.product
+        else
+            title А вот такой страницы нет :(
+    body
